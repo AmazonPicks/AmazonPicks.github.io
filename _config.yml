@@ -1,0 +1,35 @@
+# Site settings
+# These values are used across templates via {{ site.* }}
+
+title: AmazonPicks
+email: contact@amazonpicks.github.io
+
+description: >-
+  AmazonPicks curates daily Amazon deals, discounts, and trending product picks.
+  Discover top offers, best-selling gadgets, and value buys updated every day.
+
+baseurl: "" # keep empty for GitHub Pages root
+url: "https://amazonpicks.github.io" # your GitHub Pages URL
+
+twitter_username: amazonpicks
+github_username: AmazonPicks
+
+# Build settings
+plugins:
+  - jekyll-feed
+
+# Content collections
+collections:
+  - products
+
+# Defaults for SEO and consistency
+defaults:
+  - scope:
+      path: ""
+      type: deals
+    values:
+      layout: deal
+      author: AmazonPicks
+
+
+
