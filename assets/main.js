@@ -1,19 +1,11 @@
-window.addEventListener('DOMContentLoaded', function(event) {
-    document.addEventListener('change', function(evt){
-        console.log(evt.target.classList)
-        if(evt.target.classList.contains('qty')){
-            var button = evt.target.parentNode.querySelector('.buy-button')
-            var qty = parseInt(evt.target.value)
-            button.setAttribute('data-item-quantity', qty)
-            var label = button.innerHTML
-            label = label.replace(/\d+/, evt.target.value)
-            if(qty > 1){
-                label = label.replace(/copy/, "copies")
-            }
-            else{
-                label = label.replace(/copies/, "copy")
-            }
-            button.innerHTML = label;
-        }
-    })
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.buy-button');
+    if (!btn) return;
+
+    const url = btn.dataset.itemUrl;
+    if (url) {
+      window.open(url, '_blank'); // or window.location.href = url
+    }
+  });
 });
